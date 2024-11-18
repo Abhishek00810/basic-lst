@@ -1,0 +1,7 @@
+export const PRIVATE_KEY = "3QLigqK4NRahktqNZTcQatBGckYnW5r5G1Kw2samH8wsrF4CS5g6n4wwZUfcDVT7NMKu994fT5f8ntftvhJxnhEg";
+export const PUBLIC_KEY = "CKfFbJLf9bzNHESELpMHYnpKWCdL3uCXwGSz1HnmnggQ";
+
+export const TOKEN_MINT_ADDRESS = "NLxKNd8mziEKn9hveoDQEzHihW36J5ir7GEMFQhrXTi";
+
+
+export const PRIVATE_KEY_C1 = "aEAZFdqcd79U32u5f81EqkNaDDERrApW8437fsw7u38jaNVSgbt5RN12ZCXSEQV93Y3zk4wLXXvRgstVhWnfUnG"
