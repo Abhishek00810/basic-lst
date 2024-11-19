@@ -42,12 +42,13 @@ var web3_js_1 = require("@solana/web3.js");
 var address_js_1 = require("./address.js");
 var bs58_1 = require("bs58");
 var spl_token_2 = require("@solana/spl-token");
+require('dotenv').config();
 var web3_js_2 = require("@solana/web3.js");
 var address_js_2 = require("./address.js");
 var token_decimals = BigInt(1); //0.50 for less confusion
-var connection = new web3_js_1.Connection("https://devnet.helius-rpc.com/?api-key=800cce9d-a272-498e-bd5f-b1a1bf3c8294", "confirmed");
-var PRIVATE_KEY = "3QLigqK4NRahktqNZTcQatBGckYnW5r5G1Kw2samH8wsrF4CS5g6n4wwZUfcDVT7NMKu994fT5f8ntftvhJxnhEg";
-var PUBLIC_KEY = "CKfFbJLf9bzNHESELpMHYnpKWCdL3uCXwGSz1HnmnggQ";
+var connection = new web3_js_1.Connection(process.env.URL, "confirmed");
+var PRIVATE_KEY = process.env.PRIVATE_KEY;
+var PUBLIC_KEY = process.env.PUBLIC_KEY;
 var PRICE_TOKEN = 96 * 10e9;
 var wallet = bs58_1.default.decode(PRIVATE_KEY);
 var c_wallet = bs58_1.default.decode(address_js_2.PRIVATE_KEY_C1);

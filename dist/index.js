@@ -36,7 +36,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require('dotenv').config();
+var dotenv = require("dotenv");
+dotenv.config();
 var express = require("express");
 var mintTokens_1 = require("./mintTokens");
 var app = express();
@@ -54,25 +55,22 @@ app.post('/helius', function (req, res) { return __awaiter(void 0, void 0, void 
                 toAddress = API_CALL.accountData.accounts[1];
                 amount = 1000000000;
                 type = "received_native_sol";
-                if (!(type === "received_native_sol")) return [3 /*break*/, 3];
-                return [4 /*yield*/, (0, mintTokens_1.burnTokens)(fromAddress, toAddress, amount)];
+                if (!(type === "received_native_sol")) return [3 /*break*/, 2];
+                return [4 /*yield*/, (0, mintTokens_1.mintTokens)(fromAddress, toAddress, amount)];
             case 1:
                 _a.sent();
-                return [4 /*yield*/, (0, mintTokens_1.sendNativeTokens)(fromAddress, toAddress, amount)];
-            case 2:
-                _a.sent();
-                return [3 /*break*/, 6];
-            case 3: 
+                return [3 /*break*/, 5];
+            case 2: 
             // What could go wrong here?
             return [4 /*yield*/, (0, mintTokens_1.burnTokens)(fromAddress, toAddress, amount)];
-            case 4:
+            case 3:
                 // What could go wrong here?
                 _a.sent();
                 return [4 /*yield*/, (0, mintTokens_1.sendNativeTokens)(fromAddress, toAddress, amount)];
-            case 5:
+            case 4:
                 _a.sent();
-                _a.label = 6;
-            case 6:
+                _a.label = 5;
+            case 5:
                 // from address -> to address
                 // particular mint = > toaddress
                 res.send('Transaction successful');
@@ -81,5 +79,7 @@ app.post('/helius', function (req, res) { return __awaiter(void 0, void 0, void 
     });
 }); });
 app.listen(3000, function () {
+    console.log('PRIVATE_KEY:', process.env.PRIVATE_KEY);
+    console.log('URL:', process.env.URL);
     console.log('Server is running on port 3000');
 });
